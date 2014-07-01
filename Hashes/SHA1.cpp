@@ -77,3 +77,7 @@ std::string SHA1::hexdigest() const{
 unsigned int SHA1::digestsize() const{
     return 160;
 }
+
+unsigned int SHA1::blocksize() const{
+    return 512;
+}

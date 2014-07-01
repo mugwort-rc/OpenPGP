@@ -89,3 +89,7 @@ std::string SHA512::hexdigest() const{
 unsigned int SHA512::digestsize() const{
     return 512;
 }
+
+unsigned int SHA512::blocksize() const{
+    return 1024;
+}

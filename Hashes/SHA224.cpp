@@ -30,3 +30,7 @@ std::string SHA224::hexdigest() const{
 unsigned int SHA224::digestsize() const{
     return 224;
 }
+
+unsigned int SHA224::blocksize() const{
+    return 512;
+}

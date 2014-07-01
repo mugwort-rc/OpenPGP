@@ -82,3 +82,7 @@ std::string MD5::hexdigest() const{
 unsigned int MD5::digestsize() const{
     return 128;
 }
+
+unsigned int MD5::blocksize() const{
+    return 512;
+}

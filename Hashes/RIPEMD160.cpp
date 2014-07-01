@@ -86,3 +86,7 @@ std::string RIPEMD160::hexdigest() const{
 unsigned int RIPEMD160::digestsize() const{
     return 128;
 }
+
+unsigned int RIPEMD160::blocksize() const{
+    return 512;
+}

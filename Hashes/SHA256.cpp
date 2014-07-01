@@ -89,3 +89,7 @@ std::string SHA256::hexdigest() const{
 unsigned int SHA256::digestsize() const{
     return 256;
 }
+
+unsigned int SHA256::blocksize() const{
+    return 512;
+}
