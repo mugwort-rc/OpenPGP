@@ -85,3 +85,7 @@ std::string SHA512::hexdigest() const{
     calc(last, tmp);
     return makehex(tmp.h0, 16) + makehex(tmp.h1, 16) + makehex(tmp.h2, 16) + makehex(tmp.h3, 16) + makehex(tmp.h4, 16) + makehex(tmp.h5, 16) + makehex(tmp.h6, 16) + makehex(tmp.h7, 16);
 }
+
+unsigned int SHA512::digestsize() const{
+    return 512;
+}

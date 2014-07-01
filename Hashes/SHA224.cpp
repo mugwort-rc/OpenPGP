@@ -26,3 +26,7 @@ SHA224::SHA224(const std::string & str) :
 std::string SHA224::hexdigest() const{
     return SHA256::hexdigest().substr(0, 56);
 }
+
+unsigned int SHA224::digestsize() const{
+    return 224;
+}

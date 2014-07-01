@@ -78,3 +78,7 @@ std::string MD5::hexdigest() const{
     calc(last, tmp);
     return little_end(makehex(tmp.h0, 8)) + little_end(makehex(tmp.h1, 8)) + little_end(makehex(tmp.h2, 8)) + little_end(makehex(tmp.h3, 8));
 }
+
+unsigned int MD5::digestsize() const{
+    return 128;
+}

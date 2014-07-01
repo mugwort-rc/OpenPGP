@@ -82,3 +82,7 @@ std::string RIPEMD160::hexdigest() const{
     calc(last, tmp);
     return little_end(makehex(tmp.h0, 8)) + little_end(makehex(tmp.h1, 8)) + little_end(makehex(tmp.h2, 8)) + little_end(makehex(tmp.h3, 8)) + little_end(makehex(tmp.h4, 8));
 }
+
+unsigned int RIPEMD160::digestsize() const{
+    return 128;
+}

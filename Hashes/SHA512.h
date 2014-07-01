@@ -57,5 +57,6 @@ class SHA512 : public Hash{
         SHA512(const std::string & data);
         void update(const std::string & str);
         std::string hexdigest() const;
+        unsigned int digestsize() const;
 };
 #endif
