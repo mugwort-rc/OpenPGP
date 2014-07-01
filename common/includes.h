@@ -24,6 +24,7 @@ const uint64_t mod64 = 0xffffffffffffffffULL;
 
 uint64_t toint(const std::string & s, const int & base = 10);
 std::string little_end(const std::string & str, const unsigned int & base = 16);
+std::string xor_strings(const std::string & str1, const std::string & str2);
 
 template <typename T> std::string makebin(T value, unsigned int size = 8 * sizeof(T)){
     // Changes a value into its binary string

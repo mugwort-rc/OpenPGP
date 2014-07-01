@@ -41,6 +41,14 @@ std::string little_end(const std::string & str, const unsigned int & base){
 	return t;
 }
 
+std::string xor_strings(const std::string & str1, const std::string & str2){
+    std::string out(std::min(str1.size(), str2.size()), 0);
+    for(unsigned int x = 0; x < out.size(); x++){
+        out[x] = str1[x] ^ str2[x];
+    }
+    return out;
+}
+
 std::string bintohex(const std::string & in, bool caps){
     // Changes a binary string to its hexadecimal equivalent
     if (in.size() % 4){
