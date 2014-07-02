@@ -2,9 +2,10 @@
 #define __HMAC_DRBG__
 
 #include "../../Hashes/HMAC.h"
+#include "DRBG.h"
 
 template <class HMAC>
-class HMAC_DRBG{
+class HMAC_DRBG : public DRBG{
     protected:
         std::string hmac(const std::string & key, const std::string & value){
             return HMAC(key, value).digest();
@@ -13,13 +14,11 @@ class HMAC_DRBG{
         std::string key;
         std::string value;
 
-        unsigned int reseed_counter;
-
     public:
         HMAC_DRBG(const std::string & entropy, const std::string & nonce, const std::string & personalization) :
+            DRBG(),
             key(),
-            value(),
-            reseed_counter(1)
+            value()
         {
             std::string seed = entropy + nonce + personalization;
             typedef typename HMAC::Hash_t Hash_t;
