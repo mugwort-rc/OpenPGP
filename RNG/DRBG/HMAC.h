@@ -11,6 +11,15 @@ class HMAC_DRBG : public DRBG{
             return HMAC(key, value).digest();
         }
 
+        void update(const std::string & entropy=std::string()){
+            key = hmac(key, value + std::string(1, 0) + entropy);
+            value = hmac(key, value);
+            if (!entropy.empty()){
+                key = hmac(key, value + std::string(1, 1) + entropy);
+                value = hmac(key, value);
+            }
+        }
+
         std::string key;
         std::string value;
 
@@ -26,15 +35,6 @@ class HMAC_DRBG : public DRBG{
             key = std::string(len, 0);
             value = std::string(len, 1);
             update(seed);
-        }
-
-        void update(const std::string & entropy=std::string()){
-            key = hmac(key, value + std::string(1, 0) + entropy);
-            value = hmac(key, value);
-            if (!entropy.empty()){
-                key = hmac(key, value + std::string(1, 1) + entropy);
-                value = hmac(key, value);
-            }
         }
 
         void reseed(const std::string & entropy, const std::string & additional=std::string()){
