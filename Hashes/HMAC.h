@@ -13,6 +13,8 @@ class HMAC{
         T inner, outer;
 
     public:
+        using Hash_t = T;
+
         HMAC(std::string key, const std::string & message=std::string()) :
             inner(),
             outer()

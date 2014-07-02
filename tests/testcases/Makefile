@@ -12,6 +12,7 @@ all: test_aes128_ecb.o test_aes192_ecb.o test_aes256_ecb.o \
      test_md5.o test_ripemd160.o test_sha1.o \
      test_sha224.o test_sha256.o test_sha384.o test_sha512.o test_hmac.o \
      test_dsa.o test_rsa.o \
+     test_hmac_drbg.o \
      test_pgp.o test_radix64.o
 
 test_aes128_ecb.o:
@@ -70,6 +71,9 @@ test_dsa.o:
 
 test_rsa.o:
 	$(CXX) $(CFLAGS) test_rsa.cpp
+
+test_hmac_drbg.o:
+	$(CXX) $(CFLAGS) test_hmac_drbg.cpp
 
 test_pgp.o:
 	$(CXX) $(CFLAGS) test_pgp.cpp
