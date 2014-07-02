@@ -30,6 +30,8 @@ THE SOFTWARE.
 
 #include "common/includes.h"
 
+std::string to_hex(const mpz_class & mpi);
+
 std::string write_MPI(const mpz_class & data);  // given some value, return the formatted mpi
 mpz_class read_MPI(std::string & data);         // remove mpi from data, returning mpi value. the rest of the data will be returned through pass-by-reference
 

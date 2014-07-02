@@ -1,9 +1,14 @@
 #include "mpi.h"
 
+std::string to_hex(const mpz_class & mpi){
+    std::string out = mpi.get_str(16);
+    out = ((out.size() & 1)?"0":"") + out;
+    return out;
+}
+
 // given some value, return the formatted mpi
 std::string write_MPI(const mpz_class & data){
-    std::string out = data.get_str(16);
-    out = ((out.size() & 1)?"0":"") + out;
+    std::string out = to_hex(data);
     out = makehex(data.get_str(2).size(), 4) + out;
     return unhexlify(out);
 }

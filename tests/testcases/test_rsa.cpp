@@ -6,12 +6,6 @@
 
 const uint8_t PKA_RSA = 1;
 
-std::string to_hex(const mpz_class & mpi) {
-    std::string out = mpi.get_str(16);
-    out = ((out.size() & 1)?"0":"") + out;
-    return out;
-}
-
 TEST(RSATest, test_rsa_sign_pkcs1_v1_5) {
 
     ASSERT_EQ(RSA_SIGGEN_N.size(), RSA_SIGGEN_D.size());
