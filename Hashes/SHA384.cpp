@@ -27,10 +27,10 @@ std::string SHA384::hexdigest() const{
     return SHA512::hexdigest().substr(0, 96);
 }
 
-unsigned int SHA384::digestsize() const{
+unsigned int SHA384::digestsize(){
     return 384;
 }
 
-unsigned int SHA384::blocksize() const{
+unsigned int SHA384::blocksize(){
     return 1024;
 }

@@ -86,10 +86,10 @@ std::string SHA256::hexdigest() const{
     return makehex(tmp.h0, 8) + makehex(tmp.h1, 8) + makehex(tmp.h2, 8) + makehex(tmp.h3, 8) + makehex(tmp.h4, 8) + makehex(tmp.h5, 8) + makehex(tmp.h6, 8) + makehex(tmp.h7, 8);
 }
 
-unsigned int SHA256::digestsize() const{
+unsigned int SHA256::digestsize(){
     return 256;
 }
 
-unsigned int SHA256::blocksize() const{
+unsigned int SHA256::blocksize(){
     return 512;
 }

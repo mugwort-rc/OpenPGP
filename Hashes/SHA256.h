@@ -59,8 +59,9 @@ class SHA256 : public Hash{
 
         void update(const std::string &str);
         std::string hexdigest() const;
-        unsigned int digestsize() const;
-        unsigned int blocksize() const;
+
+        static unsigned int digestsize();
+        static unsigned int blocksize();
 };
 
 #endif

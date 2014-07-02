@@ -86,10 +86,10 @@ std::string SHA512::hexdigest() const{
     return makehex(tmp.h0, 16) + makehex(tmp.h1, 16) + makehex(tmp.h2, 16) + makehex(tmp.h3, 16) + makehex(tmp.h4, 16) + makehex(tmp.h5, 16) + makehex(tmp.h6, 16) + makehex(tmp.h7, 16);
 }
 
-unsigned int SHA512::digestsize() const{
+unsigned int SHA512::digestsize(){
     return 512;
 }
 
-unsigned int SHA512::blocksize() const{
+unsigned int SHA512::blocksize(){
     return 1024;
 }

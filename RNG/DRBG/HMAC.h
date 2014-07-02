@@ -22,7 +22,8 @@ class HMAC_DRBG{
             reseed_counter(1)
         {
             std::string seed = entropy + nonce + personalization;
-            unsigned int len = typename HMAC::Hash_t().digestsize() >> 3;
+            typedef typename HMAC::Hash_t Hash_t;
+            unsigned int len = Hash_t::digestsize() >> 3;
             key = std::string(len, 0);
             value = std::string(len, 1);
             update(seed);

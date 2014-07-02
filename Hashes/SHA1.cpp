@@ -74,10 +74,10 @@ std::string SHA1::hexdigest() const{
     return makehex(tmp.h0, 8) + makehex(tmp.h1, 8) + makehex(tmp.h2, 8) + makehex(tmp.h3, 8) + makehex(tmp.h4, 8);
 }
 
-unsigned int SHA1::digestsize() const{
+unsigned int SHA1::digestsize(){
     return 160;
 }
 
-unsigned int SHA1::blocksize() const{
+unsigned int SHA1::blocksize(){
     return 512;
 }

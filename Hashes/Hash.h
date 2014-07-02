@@ -38,9 +38,6 @@ class Hash{
         virtual std::string hexdigest() const = 0;
         std::string digest() const;
 
-        virtual unsigned int digestsize() const = 0;
-        virtual unsigned int blocksize() const = 0;
-
     protected:
         std::string stack;
         uint64_t clen;

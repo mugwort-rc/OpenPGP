@@ -56,8 +56,9 @@ class SHA1 : public Hash {
         SHA1(const std::string & str);
         void update(const std::string & str);
         std::string hexdigest() const;
-        unsigned int digestsize() const;
-        unsigned int blocksize() const;
+
+        static unsigned int digestsize();
+        static unsigned int blocksize();
 };
 
 #endif
