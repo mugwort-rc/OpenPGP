@@ -4,7 +4,7 @@
 #include "Hashes.h"
 
 template <class T>
-class HMAC{
+class HMAC : public Hash{
     protected:
         virtual unsigned int blocksize(void) const{
             return 512;
@@ -16,6 +16,7 @@ class HMAC{
         using Hash_t = T;
 
         HMAC(std::string key, const std::string & message=std::string()) :
+            Hash(),
             inner(),
             outer()
         {
