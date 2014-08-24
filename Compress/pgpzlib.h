@@ -16,7 +16,8 @@
 
 #define ZLIB_CHUNK 16384
 #define ZLIB_WINDOWBITS 15      // ZLIB format
-#define DEFLATE_WINDOWBITS -15  // Raw DEFLATE
+#define DEFLATE_ENCODE_WINDOWBITS -13  // Raw DEFLATE
+#define DEFLATE_DECODE_WINDOWBITS -15  // Raw DEFLATE
 
 // level:
 //      -1 - 9

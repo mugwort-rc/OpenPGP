@@ -1,6 +1,6 @@
 # OpenPGP commandline Makefile
 CXX?=g++
-LFLAGS=-lOpenPGP -lgmp -lgmpxx -lbz2 -lz -L..
+LFLAGS=-lOpenPGP -lgmp -lgmpxx -lboost_iostreams -L..
 CFLAGS=-std=c++11 -Wall
 TARGET=OpenPGP
 

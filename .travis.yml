@@ -23,6 +23,11 @@ before_install:
   - if [ "$CXX" == "clang++" ]; then sudo apt-get install --allow-unauthenticated -qq clang-3.4; fi
   - if [ "$CXX" == "clang++" ]; then export CXX="clang++-3.4"; fi
 
+  # boost
+  - sudo add-apt-repository --yes ppa:boost-latest/ppa
+  - sudo apt-get update
+  - sudo apt-get install libboost1.54-all-dev
+
   - sudo apt-get install libgmp-dev
   - sudo apt-get install libbz2-dev
   - sudo apt-get install zlib1g-dev

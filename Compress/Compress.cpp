@@ -7,7 +7,7 @@ std::string PGP_compress(const uint8_t alg, const std::string & src){
 
         switch (alg){
             case 1: // ZIP [RFC1951]
-                good = (zlib_compress(src, dst, DEFLATE_WINDOWBITS, Z_DEFAULT_COMPRESSION) == Z_OK);
+                good = (zlib_compress(src, dst, DEFLATE_ENCODE_WINDOWBITS, Z_DEFAULT_COMPRESSION) == Z_OK);
                 break;
             case 2: // ZLIB[RFC1950]
                 good = (zlib_compress(src, dst, ZLIB_WINDOWBITS, Z_DEFAULT_COMPRESSION) == Z_OK);
@@ -38,7 +38,7 @@ std::string PGP_decompress(const uint8_t alg, const std::string & src){
         std::string dst;
         switch (alg){
             case 1: // ZIP [RFC1951]
-                good = (zlib_decompress(src, dst, DEFLATE_WINDOWBITS) == Z_OK);
+                good = (zlib_decompress(src, dst, DEFLATE_DECODE_WINDOWBITS) == Z_OK);
                 break;
             case 2: // ZLIB[RFC1950]
                 good = (zlib_decompress(src, dst, ZLIB_WINDOWBITS) == Z_OK);
